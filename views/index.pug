@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    
+    div(class='uk-container',id='homeContainer')
+        div(class='uk-container',id='homeTitle')
+            h1 #{title}
+            p Welcome to #{title} 
+    
+        div(class='uk-container uk-position-large uk-position-bottom-center uk-flex uk-flex-center', id='homeButtons')
+            div(id='Loginhome',class='inline')
+                form(action="/login", method="get")
+                    button.btn.btn-primary(type="submit") Login
+            div(id='Signuphome',class='inline')
+                form(action="/signup", method="get")
+                    button.btn.btn-primary(type="submit") Sign up

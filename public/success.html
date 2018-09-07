@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>    
+
+<form>
+<p>Highlight keywords as you type: <input id="keywords" size="24" placeholder="start typing"></p>
+</form>
+
+<div id="playground" style="margin: 1em 0; padding: 0 1em; border: 1px solid #ccc;">
+<p>Round and round the rugged rock the ragged rascal ran.</p>
+<p>Tu t'entêtes à tout tenter, tu t'uses et tu te tues à tant t'entêter.</p>
+<p>Wir Wiener Wäscheweiber wäschten weisse Wäsche, Wenn wir wüssten, wo warmes, weiches Wasser wär.</p>
+</div>    
+
+<body>
+<script type="text/javascript" src="./routes/success.js"></script>
+<script type="text/javascript">
+
+var myHilitor;
+
+  document.addEventListener("DOMContentLoaded", function(e) {
+    myHilitor = new Hilitor2("playground");
+    myHilitor.setMatchType("left");
+  }, false);
+
+  document.getElementById("keywords").addEventListener("keyup", function(e) {
+    myHilitor.apply(this.value);
+  }, false);
+    
+    myHilitor.remove();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    .login
+        .login-screen
+            .app-title
+                h1 CV Search Signup 
+            .login-form
+                form(id='local-reg', action='/signup/local-reg', method='post')
+                    .control-group
+                        p
+                            label(for='username') Username
+                            input(type='text', name='username', placeholder='Username')
+                    .control-group
+                        p
+                            label(for='password') Password
+                            input(type='password', name='password', placeholder = 'Password')
+                    .control-group
+                        p
+                            label(for='blobname') Blob Storage Name
+                            input(type='text', name='blobname', placeholder = 'Blob Name')
+                    .control-group
+                        p
+                            label(for='blobkey') Blob Storage Key
+                            input(type='text', name='blobkey', placeholder = 'Blob Key')
+                    .control-group
+                        p
+                            label(for='cosmoshost') Cosmos DB Host
+                            input(type='text', name='cosmoshost', placeholder = 'Cosmos DB Host')
+                    .control-group
+                        p
+                            label(for='cosmoskey') Cosmos DB Key
+                            input(type='text', name='cosmoskey', placeholder = 'Cosmos DB Key')
+                    .control-group
+                        p
+                            label(for='azurename') Azure Search Name
+                            input(type='text', name='azurename', placeholder = 'Azure Search Name')
+                    .control-group
+                        p
+                            label(for='azurekey') Azure Search Key
+                            input(type='text', name='azurekey', placeholder = 'Azure Search Key')
+                    .btn
+                        //form(action="", method="post")
+                        button.btn.btn-primary(type="submit") Sign up
+                        //input(type='submit')
+                a(href="../login", class='uk-link-muted uk-position-bottom-center uk-position-medium') Go to Login

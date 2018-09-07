@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    div(class='uk-container uk-position-center', id='formContainer')
+        div(class='uk-card uk-card-secondary uk-card-body uk-height-auto uk-card-hover')
+            form(class="uk-form-horizontal uk-margin-small", action="", method="post", encType='multipart/form-data', /*charset='utf-8', */id='uploadForm')
+                div(class="uk-margin")
+                    label(class="uk-form-label", for="form-horizontal-text") CV
+                div(class="js-upload" uk-form-customn, id="UploadBox")
+                    input(type='file', class='custom-file-input', name='docFile', multiple)
+                button(type='submit', class='uk-button uk-button-primary uk-button-large uk-align-center', id='submitUploadButton') Upload
+
+

@@ -1,0 +1,16 @@
+#node packages
+node_modules/
+package-lock.json
+
+#bundles from build builds
+bundle.*
+
+#log files
+*.log
+
+#config file
+config.js
+
+#data files
+resume.zip
+Datablob/

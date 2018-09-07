@@ -1,0 +1,173 @@
+
+
+* {
+box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+  padding: 0px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;  */
+  font: 20px Futura;
+}
+
+#navbar {
+    background-color: #333; /* Black background color */
+    position: sticky; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+#homeButtons{
+  padding-bottom:700px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+  width: 100vw;
+  /*height: 100vh;*/
+  height: auto;
+  position: relative;
+  padding-left:40px;
+  padding-top: 50px;
+  /*background-color: #00B7FF; */
+  background-image: url('../images/CV-screening.jpg');
+  /*opacity:0.5;*/
+  /*background: rgb(255, 255, 255) transparent ;*/
+  background-size: 300px 160px;                      
+  background-repeat: repeat;
+  background-position: 20% center; 
+  background-color: #777 auto;
+}
+
+#searchField {
+  width: 300px;
+
+}
+
+#searchPage{
+  padding-bottom:700px;
+}
+
+#textSearch{
+  padding-top: 10px;
+}
+
+#homeContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.inline{
+  padding-top:40px;
+  display:inline-block;
+  margin-right:10px;
+}
+
+
+.login {
+margin: 10px auto;
+width: 300px;
+font: 17px Futura;
+padding-bottom:400px;
+padding-top:150px;
+}
+
+.login-screen {
+background-color: #FFF;
+padding: 25px;
+border-radius: 20px;
+}
+
+.app-title {
+text-align: center;
+color: #777;
+}
+
+.login-form {
+text-align: center;
+}
+.control-group {
+margin-bottom: 10px;
+}
+
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+input:focus {
+border: 2px solid #3498DB;
+box-shadow: none;
+}
+
+
+#searchBarContainer {
+  padding: 1.5rem;
+}
+
+#searchBarForm {
+  width: 80%;
+}
+
+#searchField {
+  width: 70%;
+}
+
+#searchResultContainer {
+  height: 80%;
+}
+
+#searchResultDiv, #resultDisplayDiv {
+  height: 100%;
+}
+
+#resultCardsByRel {
+  overflow: scroll;
+  max-height: 95%;
+}
+
+#formContainer{
+  padding-bottom:700px
+}
+
+.card-block {
+  padding: 5px;
+  font-size: 12px;
+  background-color: #FFF;
+  padding-left:35px;
+  padding-bottom:10px;
+  padding-top:10px;
+  border-radius: 20px;
+  margin: 10px auto;
+  width: 60%;
+}
+
+.right-aligned-title{
+font-weight:bold;
+font-size: 13px;
+}
+
+#submitUploadButton{
+  margin-top:10px;
+}
+
+#uploadForm{
+  width: 100%;
+}

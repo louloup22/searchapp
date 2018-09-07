@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	.login
+		.login-screen
+			.app-title
+				h1 CV Search Login 
+			.login-form
+				form(id='signin', action='/login/signin',method='post')
+					.control-group
+						p
+							label(for='username') Username
+							input(type='text', name='username', placeholder='Username')
+					.control-group
+						p
+							label(for='password') Password
+							input(type='password', name='password',placeholder='Password')
+					.btn
+						//form(action="", method="post")
+						button.btn.btn-primary(type="submit") Login
+				a(href="../signup", class='uk-link-muted uk-position-bottom-center uk-position-medium') Go to Sign up

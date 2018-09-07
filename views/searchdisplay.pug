@@ -1,0 +1,78 @@
+extends layout
+
+block content
+  div(class='uk-container',id='searchPage')
+      h1 CV Search Platform
+      div(class='container-fluid', id='searchBarContainer')
+        div(class='row justify-content-center', id='searchBar')
+          form(class='form-inline justify-content-center', id='searchBarForm', method='get', action='')
+            input(class='form-control mr-sm-2', id='searchField', type='search', name='term', placeHolder='Search', aria-label='Search')
+            button(class='btn btn-primary my-2 my-sm-0', id='searchButton', 
+     type='submit') Search
+        div(class='container-fluid', id='searchResultContainer')
+            div(class='row', id='searchResultDiv')
+                if searchTerm == undefined
+                    div(class='uk-container')
+                        p(class='uk-position-center-right uk-position-medium uk-light uk-text-lead uk-text-center', id='textSearch') Explore the CV by typing in your search. Have fun!
+                else if searchTerm != undefined
+                    div(class='col-6', id='resultDisplayDiv')
+                        p(class='uk-position-center-right uk-position-medium uk-light uk-text-lead uk-text-center') The result is : 
+                        div(class='container-fluid', id='result')
+                            div(class='col-6')= searchTerm
+                        p(class='uk-position-center-right uk-position-medium uk-light uk-text-lead uk-text-center') Click here to download the relevant CV : 
+                        div(class='row justify-content-center', id='DownloadBar')
+                            form(class='form-inline justify-content-center', id='DownloadBarForm', method='post', action='')
+                                input(class='form-control mr-sm-2', id='downloadField', type='hidden', name='term', placeHolder='Search', aria-label='Search')
+                                button(class='btn btn-primary my-2 my-sm-0', id='downloadButton', type='submit') Download
+
+
+                        div(class='container-fluid', id='resultCardsByRel')
+                            each field in searchResult
+                                    div(class='card shadow-sm p-3 mb-5 bg-white rounded', style='width: 100%;')
+                                        div(class='row no-gutters')
+                                            div(class='col-8')
+                                                div(class='card-block')
+                                                    div(class='row', id='CV-card-textrow')
+                                                        div(class='col-3')
+                                                            div(class='right-aligned-title') CV:
+                                                        div(class='col-9')= field.file
+                                                    div(class='row', id='Contact-card-textrow')
+                                                        div(class='col-3') 
+                                                            div(class='right-aligned-title') Contact:
+                                                        div(class='col-9')= field.candidate_name
+                                                        div(class='col-9')= field.email
+                                                        div(class='col-9')=field.phone
+                                                    div(class='row', id='Education-card-textrow')
+                                                        div(class='col-3') 
+                                                            div(class='right-aligned-title') Education:
+                                                        div(class='col-9')=field.typestudies
+                                                        div(class='col-9')=field.level_of_education
+                                                        div(class='col-9')=field.universities
+                                                    div(class='row', id='Profession-card-textrow')
+                                                        div(class='col-3') 
+                                                            div(class='right-aligned-title') Profession:
+                                                        div(class='col-9')= field.experience
+                                                        div(class='col-9')=  field.position
+                                                    div(class='row', id='Tech-card-textrow')
+                                                        div(class='col-3') 
+                                                            div(class='right-aligned-title') Tech:
+                                                        div(class='col-9')= field.programming
+                                                        div(class='col-9')= field.open_source
+                       
+
+            script.
+                $(function(){
+                function downloadFile(x){
+                    var filepath='./Datablob/';
+                    var fileselected = filepath + x;
+                    console.log(fileselected);
+                    $.ajax({
+                    url:fileselected,
+                    method:"post",
+                    success:function(){
+                    console.log('successful downloading');
+                    }
+                    });}
+                }
+                );
+
